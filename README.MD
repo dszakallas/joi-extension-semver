@@ -9,9 +9,9 @@ Semver extension for the Joi validation library
 var joi = require('joi')
   .extend(require('joi-extension-semver'));
 
-expect(joi.attempt('1.2.3', joi.semver().gte('1.2.3'))).to.eql('1.2.3'); //1.2.3
-expect(joi.attempt('1.2.3', joi.semver().lt('1.2.3'))).to.eql('1.2.3'); // throw ValidationError
-expect(joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0'))); // 1.2.3
+joi.attempt('1.2.3', joi.semver().gte('1.2.3')).to.eql('1.2.3'); //1.2.3
+joi.attempt('1.2.3', joi.semver().lt('1.2.3')).to.eql('1.2.3'); // throw ValidationError
+joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')); // 1.2.3
 ```
 
 ## Validation chains
