@@ -35,7 +35,7 @@ returning comparisons are supported.
     - [`semver.satisfies(rng)`](#semversatisfiesrng)
     - [`semver.gtr(rng)`](#semvergtrrng)
     - [`semver.ltr(rng)`](#semverltrrng)
-    - [`semver.outside(rng, hilo)`](#semveroutsiderng-hilo)
+    - [`semver.outside(hilo, rng)`](#semveroutsidehilo-rng)
 
 ### `semver`
 
@@ -60,4 +60,4 @@ Validates that the value is a semver range.
 ### `semver.satisfies(rng)`
 ### `semver.gtr(rng)`
 ### `semver.ltr(rng)`
-### `semver.outside(rng, hilo)`
+### `semver.outside(hilo, rng)`
