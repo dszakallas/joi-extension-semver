@@ -18,8 +18,11 @@ joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')); // 1.2.3
 
 ## Validation chains
 
-- [Joi]
-  - [`semver()`](#semver)
+See [semver documentation](https://www.npmjs.com/package/semver). All `boolean`
+returning comparisons are supported.
+
+- Joi
+  - [`semver`](#semver)
     - [`semver.valid()`](#semvervalid)
     - [`semver.gt(exp)`](#semvergtexp)
     - [`semver.gte(exp)`](#semvergteexp)
@@ -34,12 +37,14 @@ joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')); // 1.2.3
     - [`semver.ltr(rng)`](#semverltrrng)
     - [`semver.outside(rng, hilo)`](#semveroutsiderng-hilo)
 
-### `semver()`
+### `semver`
 
-Doesn't perform any validation in itself. The reason for this is that it is possible to continue with [`semver.validRange()`](#semvervalidrange) in which
+Starts the chain. Does not perform any validation in itself. The reason for this is that it is possible to continue with [`semver.validRange()`](#semvervalidrange) in which
 case the expected value should be a range instead of a version.
 
 ### `semver.valid()`
+
+Validates that the value is a semver version.
 
 ### `semver.gt(exp)`
 ### `semver.gte(exp)`
@@ -49,6 +54,9 @@ case the expected value should be a range instead of a version.
 ### `semver.neq(exp)`
 ### `semver.cmp(cmp, exp)`
 ### `semver.validRange()`
+
+Validates that the value is a semver range.
+
 ### `semver.satisfies(rng)`
 ### `semver.gtr(rng)`
 ### `semver.ltr(rng)`

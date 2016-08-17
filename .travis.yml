@@ -6,5 +6,5 @@ node_js:
   - "0.12"
 
 script:
-  - npm lint
+  - npm run lint
   - npm test
