@@ -4,4 +4,7 @@ node_js:
   - "5"
   - "4"
   - "0.12"
-  script: npm lint && npm test
+
+script:
+  - npm lint
+  - npm test
