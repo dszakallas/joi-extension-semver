@@ -43,21 +43,28 @@ Starts the chain. Does not perform any validation in itself. The reason for this
 case the expected value should be a range instead of a version.
 
 ### `semver.valid()`
-
-Validates that the value is a semver version.
-
+Asserts `valid(value)`.
 ### `semver.gt(exp)`
+Asserts `gt(value, exp)`.
 ### `semver.gte(exp)`
+Asserts `gte(value, exp)`.
 ### `semver.lt(exp)`
+Asserts `lt(value, exp)`.
 ### `semver.lte(exp)`
+Asserts `lte(value, exp)`.
 ### `semver.eq(exp)`
+Asserts `eq(value, exp)`.
 ### `semver.neq(exp)`
-### `semver.cmp(cmp, exp)`
+Asserts `neq(value, exp)`.
+### `semver.cmp(comp, exp)`
+Asserts `cmp(value, comp, exp)`.
 ### `semver.validRange()`
-
-Validates that the value is a semver range.
-
+Asserts `validRange(value)`.
 ### `semver.satisfies(rng)`
+Asserts `satisfies(value, rng)`.
 ### `semver.gtr(rng)`
+Asserts `gtr(value, rng)`.
 ### `semver.ltr(rng)`
+Asserts `ltr(value, rng)`.
 ### `semver.outside(hilo, rng)`
+Asserts `outside(value, hilo, rng)`.
