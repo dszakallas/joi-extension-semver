@@ -1,6 +1,6 @@
 # joi-extension-semver
 
-[![Build Status](https://travis-ci.org/szdavid92/joi-extension-semver.svg?branch=master)](https://travis-ci.org/szdavid92/joi-extension-semver)
+[![Build Status](https://travis-ci.org/dszakallas/joi-extension-semver.svg?branch=master)](https://travis-ci.org/dszakallas/joi-extension-semver)
 
 Semver extension for the Joi validation library
 
