@@ -3,5 +3,5 @@ node_js: ["8", "7", "6"]
 
 script:
   - npm run lint
-  - npm i joi
+  - npm i @hapi/joi
   - npm test
