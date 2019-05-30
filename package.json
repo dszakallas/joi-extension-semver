@@ -26,7 +26,7 @@
     "pre-commit": "^1.1.3"
   },
   "peerDependencies": {
-    "joi": ">=9.0.0"
+    "@hapi/joi": ">=15.0.0"
   },
   "dependencies": {
     "semver": "^6.1.1"
@@ -34,6 +34,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/szdavid92/joi-extension-semver.git"
+  },
+  "engines": {
+    "node": ">= 8"
   },
   "pre-commit": [
     "lint",
