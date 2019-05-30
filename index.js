@@ -1,71 +1,71 @@
 'use strict'
 
-var joi = require('@hapi/joi')
-var semver = require('semver')
+const Joi = require('@hapi/joi')
+const semver = require('semver')
 
-var extensionName = 'semver'
+const extensionName = 'semver'
 
-var validRule = {
+const validRule = {
   name: 'valid',
   validate: function (params, value, state, options) {
-    return semver.valid(value) ? value : this.createError(extensionName + '.valid', { v: value }, state, options)
+    return semver.valid(value) ? value : this.createError(`${extensionName}.valid`, { v: value }, state, options)
   }
 }
 
-var simpleComparatorRules = ['gt', 'gte', 'lt', 'lte', 'eq', 'neq'].map(function (name) {
+const simpleComparatorRules = ['gt', 'gte', 'lt', 'lte', 'eq', 'neq'].map(function (name) {
   return {
-    name: name,
+    name,
     params: {
-      exp: joi.string().required()
+      exp: Joi.string().required()
     },
     validate: function (params, value, state, options) {
-      return semver[name](value, params.exp) ? value : this.createError(extensionName + '.' + name, { v: value, exp: params.exp }, state, options)
+      return semver[name](value, params.exp) ? value : this.createError(`${extensionName}.${name}`, { v: value, exp: params.exp }, state, options)
     }
   }
 })
 
-var cmpRule = {
+const cmpRule = {
   name: 'cmp',
   params: {
-    cmp: joi.string().required(),
-    exp: joi.string().required()
+    cmp: Joi.string().required(),
+    exp: Joi.string().required()
   },
   validate: function (params, value, state, options) {
-    return semver.cmp(value, params.cmp, params.exp) ? value : this.createError(extensionName + '.cmp', { v: value, cmp: params.cmp, exp: params.exp }, state, options)
+    return semver.cmp(value, params.cmp, params.exp) ? value : this.createError(`${extensionName}.cmp`, { v: value, cmp: params.cmp, exp: params.exp }, state, options)
   }
 }
 
-var validRangeRule = {
+const validRangeRule = {
   name: 'validRange',
   validate: function (params, value, state, options) {
-    return semver.validRange(value) ? value : this.createError(extensionName + '.validRange', { v: value }, state, options)
+    return semver.validRange(value) ? value : this.createError(`${extensionName}.validRange`, { v: value }, state, options)
   }
 }
 
-var rangeComparatorRules = ['satisfies', 'gtr', 'ltr'].map(function (name) {
+const rangeComparatorRules = ['satisfies', 'gtr', 'ltr'].map(function (name) {
   return {
-    name: name,
+    name,
     params: {
-      rng: joi.string().required()
+      rng: Joi.string().required()
     },
     validate: function (params, value, state, options) {
-      return semver[name](value, params.rng) ? value : this.createError(extensionName + '.' + name, { v: value, rng: params.rng }, state, options)
+      return semver[name](value, params.rng) ? value : this.createError(`${extensionName}.${name}`, { v: value, rng: params.rng }, state, options)
     }
   }
 })
 
-var outsideRule = {
+const outsideRule = {
   name: 'outside',
   params: {
-    hilo: joi.string().required(),
-    rng: joi.string().required()
+    hilo: Joi.string().required(),
+    rng: Joi.string().required()
   },
   validate: function (params, value, state, options) {
-    return semver.outside(value, params.rng, params.hilo) ? value : this.createError(extensionName + '.outside', { v: value, hilo: params.hilo, rng: params.rng }, state, options)
+    return semver.outside(value, params.rng, params.hilo) ? value : this.createError(`${extensionName}.outside`, { v: value, hilo: params.hilo, rng: params.rng }, state, options)
   }
 }
 
-var rules = []
+const rules = []
   .concat([validRule])
   .concat(simpleComparatorRules)
   .concat([cmpRule])
@@ -73,8 +73,8 @@ var rules = []
   .concat(rangeComparatorRules)
   .concat([outsideRule])
 
-var extension = {
-  base: joi.string(),
+const extension = {
+  base: Joi.string(),
   name: 'semver',
   language: {
     valid: 'needs to be a valid semver expression',
@@ -91,7 +91,7 @@ var extension = {
     ltr: 'needs to be less than range {{rng}}',
     outside: 'needs to be {{hilo}} than range {{rng}}'
   },
-  rules: rules
+  rules
 }
 
 module.exports = extension

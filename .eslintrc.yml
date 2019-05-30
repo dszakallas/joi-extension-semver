@@ -1,0 +1,17 @@
+env:
+  node: true
+  mocha: true
+
+extends: standard
+
+parserOptions:
+  # Override eslint-config-standard, which incorrectly sets this to "module",
+  # though that setting is only for ES6 modules, not CommonJS modules.
+  sourceType: 'script'
+
+rules:
+  no-var: error
+  prefer-const: error
+  strict: error
+  object-shorthand: ['error', 'properties']
+  prefer-template: 'error'

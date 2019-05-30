@@ -1,5 +1,7 @@
-var joi = require('@hapi/joi').extend(require('./'))
-var expect = require('chai').expect
+'use strict'
+
+const joi = require('@hapi/joi').extend(require('./'))
+const expect = require('chai').expect
 
 describe('semver', function () {
   describe('.valid', function () {
