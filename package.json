@@ -1,6 +1,6 @@
 {
   "name": "joi-extension-semver",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Semver extension for the Joi validation library",
   "main": "index.js",
   "scripts": {
@@ -29,10 +29,7 @@
   "dependencies": {
     "semver": "^6.1.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/szdavid92/joi-extension-semver.git"
-  },
+  "repository": "dszakallas/joi-extension-semver",
   "pre-commit": [
     "lint",
     "test"
