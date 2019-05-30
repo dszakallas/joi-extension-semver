@@ -8,12 +8,12 @@ Semver extension for the Joi validation library
 
 ```js
 
-var joi = require('joi')
-  .extend(require('joi-extension-semver'));
+const Joi = require('@hapi/joi')
+  .extend(require('joi-extension-semver'))
 
-joi.attempt('1.2.3', joi.semver().gte('1.2.3')); //1.2.3
-joi.attempt('1.2.3', joi.semver().lt('1.2.3')); // throws ValidationError
-joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')); // 1.2.3
+Joi.attempt('1.2.3', joi.semver().gte('1.2.3')) // 1.2.3
+Joi.attempt('1.2.3', joi.semver().lt('1.2.3')) // throws ValidationError
+Joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')) // 1.2.3
 ```
 
 ## Validation chains
