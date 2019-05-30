@@ -12,6 +12,7 @@
     "joi",
     "extension"
   ],
+  "files": [],
   "author": "David Szakallas <david.szakallas@gmail.com>",
   "license": "MIT",
   "devDependencies": {
