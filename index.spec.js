@@ -1,4 +1,4 @@
-var joi = require('joi').extend(require('./'))
+var joi = require('@hapi/joi').extend(require('./'))
 var expect = require('chai').expect
 
 describe('semver', function () {
