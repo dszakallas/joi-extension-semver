@@ -15,3 +15,4 @@ rules:
   strict: error
   object-shorthand: ['error', 'properties']
   prefer-template: 'error'
+  prefer-destructuring: 'error'
