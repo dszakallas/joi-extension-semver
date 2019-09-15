@@ -1,6 +1,7 @@
 'use strict'
 
-const Joi = require('@hapi/joi').extend(require('.'))
+const { semver, semverRange } = require('.')
+const Joi = require('@hapi/joi').extend(semver).extend(semverRange)
 const { expect } = require('chai')
 
 describe('semver', function () {
@@ -76,14 +77,9 @@ describe('semver', function () {
     it('should reject version', function () {
       expect(function () { Joi.attempt('1.2.3', Joi.semver().cmp('=', '1.0.0')) }).to.throw(/"value" needs to satisfy = on 1\.0\.0/)
     })
-  })
-
-  describe('.validRange', function () {
-    it('should accept valid range', function () {
-      expect(Joi.attempt('1.2.3 - 1.8.0', Joi.semver().validRange())).to.eql('1.2.3 - 1.8.0')
-    })
-    it('should reject invalid range', function () {
-      expect(function () { Joi.attempt('a.b.c', Joi.semver().validRange()) }).to.throw(/"value" needs to be a valid range/)
+    it('should reject invalid params', function () {
+      expect(function () { Joi.attempt('1.2.3', Joi.semver().cmp('=', 'x.y.z')) }).to.throw(/exp needs to be a valid semver expression or reference/)
+      expect(function () { Joi.attempt('1.2.3', Joi.semver().cmp('foo', '1.0.0')) }).to.throw(/cmp needs to be a valid comparator or reference/)
     })
   })
 
@@ -122,6 +118,21 @@ describe('semver', function () {
     it('should reject version', function () {
       expect(function () { Joi.attempt('1.2.3', Joi.semver().outside('<', '~1.0.0')) }).to.throw(/"value" needs to be < than range ~1\.0\.0/)
       expect(function () { Joi.attempt('1.2.3', Joi.semver().outside('>', '~2.0.0')) }).to.throw(/"value" needs to be > than range ~2\.0\.0/)
+    })
+    it('should reject invalid params', function () {
+      expect(function () { Joi.attempt('1.2.3', Joi.semver().outside('>', 'x.y.z')) }).to.throw(/rng needs to be a valid semver range or reference/)
+      expect(function () { Joi.attempt('1.2.3', Joi.semver().outside('foo', '~1.0.0')) }).to.throw(/hilo needs to be a valid comparator or reference/)
+    })
+  })
+})
+
+describe('semverRange', function () {
+  describe('.valid', function () {
+    it('should accept valid range', function () {
+      expect(Joi.attempt('1.2.3 - 1.8.0', Joi.semverRange().valid())).to.eql('1.2.3 - 1.8.0')
+    })
+    it('should reject invalid range', function () {
+      expect(function () { Joi.attempt('a.b.c', Joi.semverRange().valid()) }).to.throw(/"value" needs to be a valid semver range/)
     })
   })
 })
