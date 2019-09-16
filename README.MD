@@ -7,13 +7,17 @@ Semver extension for the Joi validation library
 ## Usage
 
 ```js
-
+const { semver, semverRange } = require('joi-extension-semver')
 const Joi = require('@hapi/joi')
-  .extend(require('joi-extension-semver'))
+    .extend(semver)
+    .extend(semverRange)
 
-Joi.attempt('1.2.3', joi.semver().gte('1.2.3')) // 1.2.3
-Joi.attempt('1.2.3', joi.semver().lt('1.2.3')) // throws ValidationError
-Joi.attempt('1.2.3', joi.semver().satisfies('^1.0.0')) // 1.2.3
+Joi.attempt('1.2.3', Joi.semver().valid()) // '1.2.3'
+Joi.attempt('>=1.2.3', Joi.semverRange().valid()) // '>=1.2.3'
+
+Joi.attempt('1.2.3', Joi.semver().gte('1.2.3')) // '1.2.3'
+Joi.attempt('1.2.3', Joi.semver().lt('1.2.3')) // throws ValidationError
+Joi.attempt('1.2.3', Joi.semver().satisfies('^1.0.0')) // '1.2.3'
 ```
 
 ## Validation chains
@@ -31,40 +35,45 @@ returning comparisons are supported.
     - [`semver.eq(exp)`](#semvereqexp)
     - [`semver.neq(exp)`](#semverneqexp)
     - [`semver.cmp(cmp, exp)`](#semvercmpcmp-exp)
-    - [`semver.validRange()`](#semvervalidrange)
     - [`semver.satisfies(rng)`](#semversatisfiesrng)
     - [`semver.gtr(rng)`](#semvergtrrng)
     - [`semver.ltr(rng)`](#semverltrrng)
     - [`semver.outside(hilo, rng)`](#semveroutsidehilo-rng)
+  - [`semverRange`](#semverRange)
+    - [`semverRange.valid()`](#semverRangevalid)
 
 ### `semver`
 
-Starts the chain. Does not perform any validation in itself. The reason for this is that it is possible to continue with [`semver.validRange()`](#semvervalidrange) in which
-case the expected value should be a range instead of a version.
+Starts the chain.
 
-### `semver.valid()`
+#### `semver.valid()`
 Asserts `valid(value)`.
-### `semver.gt(exp)`
+#### `semver.gt(exp)`
 Asserts `gt(value, exp)`.
-### `semver.gte(exp)`
+#### `semver.gte(exp)`
 Asserts `gte(value, exp)`.
-### `semver.lt(exp)`
+#### `semver.lt(exp)`
 Asserts `lt(value, exp)`.
-### `semver.lte(exp)`
+#### `semver.lte(exp)`
 Asserts `lte(value, exp)`.
-### `semver.eq(exp)`
+#### `semver.eq(exp)`
 Asserts `eq(value, exp)`.
-### `semver.neq(exp)`
+#### `semver.neq(exp)`
 Asserts `neq(value, exp)`.
-### `semver.cmp(comp, exp)`
+#### `semver.cmp(comp, exp)`
 Asserts `cmp(value, comp, exp)`.
-### `semver.validRange()`
-Asserts `validRange(value)`.
-### `semver.satisfies(rng)`
+#### `semver.satisfies(rng)`
 Asserts `satisfies(value, rng)`.
-### `semver.gtr(rng)`
+#### `semver.gtr(rng)`
 Asserts `gtr(value, rng)`.
-### `semver.ltr(rng)`
+#### `semver.ltr(rng)`
 Asserts `ltr(value, rng)`.
-### `semver.outside(hilo, rng)`
+#### `semver.outside(hilo, rng)`
 Asserts `outside(value, hilo, rng)`.
+
+### `semverRange`
+
+Starts the chain.
+
+#### `semverRange.valid()`
+Asserts `validRange(value)`.
