@@ -31,6 +31,7 @@ rules.compare = {
     }
   ]
 }
+
 ;['gt', 'gte', 'lt', 'lte', 'eq', 'neq'].forEach(function (name) {
   rules[name] = {
     method: function (exp) {
@@ -73,6 +74,7 @@ rules.compareRange = {
     }
   ]
 }
+
 ;['satisfies', 'gtr', 'ltr'].forEach(function (name) {
   rules[name] = {
     method: function (rng) {
