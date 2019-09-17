@@ -1,8 +1,15 @@
 # joi-extension-semver
 
-[![Build Status](https://travis-ci.org/dszakallas/joi-extension-semver.svg?branch=master)](https://travis-ci.org/dszakallas/joi-extension-semver)
+[![version](https://img.shields.io/npm/v/joi-extension-semver?style=flat-square)][npm]
+[![license](https://img.shields.io/npm/l/joi-extension-semver?style=flat-square)][npm]
+[![build](https://travis-ci.org/dszakallas/joi-extension-semver.svg?branch=master)][build]
 
-Semver extension for the Joi validation library
+[npm]: https://www.npmjs.com/package/joi-extension-semver
+[build]: https://travis-ci.org/dszakallas/joi-extension-semver
+
+Semver extension for the [Joi][] validation library
+
+[joi]: https://github.com/hapijs/joi
 
 ## Usage
 
