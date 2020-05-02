@@ -3,8 +3,10 @@
   "version": "4.0.0",
   "description": "Semver extension for the Joi validation library",
   "main": "index.js",
+  "types": "types",
   "scripts": {
     "lint": "eslint **/*.js",
+    "lint:ts": "dtslint types",
     "test": "nyc mocha index.spec.js"
   },
   "keywords": [
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@hapi/joi": "^16.0.0",
     "chai": "^4.2.0",
+    "dtslint": "^3.5.1",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.3",
@@ -32,6 +35,7 @@
     "@hapi/joi": ">=16.0.0"
   },
   "dependencies": {
+    "@types/hapi__joi": "^16.0.12",
     "semver": "^6.1.1"
   },
   "repository": "dszakallas/joi-extension-semver",
