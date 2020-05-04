@@ -32,7 +32,7 @@
     "@hapi/joi": ">=16.0.0"
   },
   "dependencies": {
-    "semver": "^6.1.1"
+    "semver": "^7.3.2"
   },
   "repository": "dszakallas/joi-extension-semver",
   "engines": {
