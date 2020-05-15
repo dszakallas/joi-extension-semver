@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.1.1
+
+- Fix an issue where the types weren't provided at install time.
+
+
 ## 4.1.0
 
 - Provide types for TypeScript.
