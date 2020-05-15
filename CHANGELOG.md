@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.1.0
+
+- Provide types for TypeScript.
+
+
 ## 4.0.0
 
 - BREAKING CHANGE: Require [@hapi/joi][] ^16.0.0.
