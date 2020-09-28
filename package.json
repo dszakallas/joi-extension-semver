@@ -1,6 +1,6 @@
 {
   "name": "joi-extension-semver",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "Semver extension for the Joi validation library",
   "main": "index.js",
   "types": "types",
