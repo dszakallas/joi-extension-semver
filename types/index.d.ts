@@ -1,6 +1,6 @@
 // TypeScript Version: 3.5
 
-import { Extension, AnySchema } from '@hapi/joi'
+import { Extension, AnySchema } from 'joi'
 
 export const semver: Extension
 export const semverRange: Extension
@@ -27,7 +27,7 @@ export interface SemverRangeSchema extends AnySchema {
   valid(): this
 }
 
-declare module "@hapi/joi" {
+declare module "joi" {
   interface Root {
     semver(): SemverSchema
     semverRange(): SemverRangeSchema

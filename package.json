@@ -21,7 +21,7 @@
   "author": "David Szakallas <david.szakallas@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@hapi/joi": "^16.0.0",
+    "joi": "^17.2.0",
     "chai": "^4.2.0",
     "dtslint": "^3.5.1",
     "eslint": "^5.16.0",
@@ -36,15 +36,14 @@
     "typescript": "^3.9.6"
   },
   "peerDependencies": {
-    "@hapi/joi": ">=16.0.0"
+    "joi": ">=17.2.0"
   },
   "dependencies": {
-    "@types/hapi__joi": "^16.0.12",
     "semver": "^6.1.1"
   },
   "repository": "dszakallas/joi-extension-semver",
   "engines": {
-    "node": ">= 8"
+    "node": ">=12"
   },
   "pre-commit": [
     "lint",

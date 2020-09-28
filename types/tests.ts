@@ -1,4 +1,4 @@
-import Joi from '@hapi/joi'
+import Joi from 'joi'
 import { semver, semverRange } from 'joi-extension-semver'
 
 Joi.extend(semver)
