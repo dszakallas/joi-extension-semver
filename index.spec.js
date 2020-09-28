@@ -1,7 +1,7 @@
 'use strict'
 
 const { semver, semverRange } = require('.')
-const Joi = require('@hapi/joi').extend(semver).extend(semverRange)
+const Joi = require('joi').extend(semver).extend(semverRange)
 const { expect } = require('chai')
 
 describe('semver', function () {

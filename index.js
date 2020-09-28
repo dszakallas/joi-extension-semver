@@ -1,6 +1,6 @@
 'use strict'
 
-const Joi = require('@hapi/joi')
+const Joi = require('joi')
 const semver = require('semver')
 
 const extensionName = 'semver'
@@ -12,7 +12,7 @@ const semverRangeExtension = {
     return semver.validRange(value) ? { value } : { errors: error(`${extensionName}.valid`) }
   },
   messages: {
-    [`${extensionName}.valid`]: '"{{#label}}" needs to be a valid semver range'
+    [`${extensionName}.valid`]: '{{#label}} needs to be a valid semver range'
   }
 }
 
@@ -111,18 +111,18 @@ const semverExtension = {
     return semver.valid(value) ? { value } : { errors: error(`${extensionName}.valid`) }
   },
   messages: {
-    [`${extensionName}.valid`]: '"{{#label}}" needs to be a valid semver expression',
-    [`${extensionName}.gt`]: '"{{#label}}" needs to be greater than {{#exp}}',
-    [`${extensionName}.gte`]: '"{{#label}}" needs to be greater than or equal to {{#exp}}',
-    [`${extensionName}.lt`]: '"{{#label}}" needs to be less than {{#exp}}',
-    [`${extensionName}.lte`]: '"{{#label}}" needs to be less than or equal to {{#exp}}',
-    [`${extensionName}.eq`]: '"{{#label}}" needs to be logically equivalent to {{#exp}}',
-    [`${extensionName}.neq`]: '"{{#label}}" needs to be logically different than {{#exp}}',
-    [`${extensionName}.cmp`]: '"{{#label}}" needs to satisfy {{#cmp}} on {{#exp}}',
-    [`${extensionName}.satisfies`]: '"{{#label}}" needs to satisfy {{#rng}}',
-    [`${extensionName}.gtr`]: '"{{#label}}" needs to be greater than range {{#rng}}',
-    [`${extensionName}.ltr`]: '"{{#label}}" needs to be less than range {{#rng}}',
-    [`${extensionName}.outside`]: '"{{#label}}" needs to be {{#hilo}} than range {{#rng}}'
+    [`${extensionName}.valid`]: '{{#label}} needs to be a valid semver expression',
+    [`${extensionName}.gt`]: '{{#label}} needs to be greater than {{#exp}}',
+    [`${extensionName}.gte`]: '{{#label}} needs to be greater than or equal to {{#exp}}',
+    [`${extensionName}.lt`]: '{{#label}} needs to be less than {{#exp}}',
+    [`${extensionName}.lte`]: '{{#label}} needs to be less than or equal to {{#exp}}',
+    [`${extensionName}.eq`]: '{{#label}} needs to be logically equivalent to {{#exp}}',
+    [`${extensionName}.neq`]: '{{#label}} needs to be logically different than {{#exp}}',
+    [`${extensionName}.cmp`]: '{{#label}} needs to satisfy {{#cmp}} on {{#exp}}',
+    [`${extensionName}.satisfies`]: '{{#label}} needs to satisfy {{#rng}}',
+    [`${extensionName}.gtr`]: '{{#label}} needs to be greater than range {{#rng}}',
+    [`${extensionName}.ltr`]: '{{#label}} needs to be less than range {{#rng}}',
+    [`${extensionName}.outside`]: '{{#label}} needs to be {{#hilo}} than range {{#rng}}'
   },
   rules
 }

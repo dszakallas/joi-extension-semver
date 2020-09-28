@@ -9,13 +9,13 @@
 
 Semver extension for the [Joi][] validation library
 
-[joi]: https://github.com/hapijs/joi
+[joi]: https://github.com/sideway/joi
 
 ## Usage
 
 ```js
 const { semver, semverRange } = require('joi-extension-semver')
-const Joi = require('@hapi/joi')
+const Joi = require('joi')
     .extend(semver)
     .extend(semverRange)
 
