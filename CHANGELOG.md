@@ -1,5 +1,10 @@
 # Changelog
 
+## 5.0.0
+
+- BREAKING CHANGE: Require [joi][] >=17.2.0 instead of deprecated [@hapi/joi][].
+- BREAKING CHANGE: Require Node 12+
+
 ## 4.1.1
 
 - Fix an issue where the types weren't provided at install time.
