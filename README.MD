@@ -2,10 +2,10 @@
 
 [![version](https://img.shields.io/npm/v/joi-extension-semver)][npm]
 [![license](https://img.shields.io/npm/l/joi-extension-semver)][npm]
-[![build](https://img.shields.io/github/workflow/status/dszakallas/joi-extension-semver/ci/master)][build]
+[![build](https://img.shields.io/github/workflow/status/dszakallas/joi-extension-semver/Node.js%20CI/master)][build]
 
 [npm]: https://www.npmjs.com/package/joi-extension-semver
-[build]: https://travis-ci.org/dszakallas/joi-extension-semver
+[build]: https://github.com/dszakallas/joi-extension-semver/actions?query=branch%3Amaster+workflow%3A%22Node.js+CI%22
 
 Semver extension for the [Joi][] validation library
 
