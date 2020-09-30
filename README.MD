@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/joi-extension-semver)][npm]
 [![license](https://img.shields.io/npm/l/joi-extension-semver)][npm]
-[![build](https://travis-ci.org/dszakallas/joi-extension-semver.svg?branch=master)][build]
+[![build](https://img.shields.io/github/workflow/status/dszakallas/joi-extension-semver/ci/master)][build]
 
 [npm]: https://www.npmjs.com/package/joi-extension-semver
 [build]: https://travis-ci.org/dszakallas/joi-extension-semver
